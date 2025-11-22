@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cultural Psychology Lab — Home</title>
+  <meta name="description" content="Cultural Psychology Lab — research, people, publications, and opportunities in cultural psychology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f9fb; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --glass: rgba(255,255,255,0.6);
+      --max-width:1100px; --radius:12px; --shadow: 0 8px 24px rgba(16,24,40,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;smooth-font-smoothing:antialiased;background:linear-gradient(180deg,var(--bg),#fff);color:#0f172a}
+    a{color:var(--accent);text-decoration:none}
+    header{background:linear-gradient(90deg,rgba(14,165,164,0.10), rgba(14,165,164,0.04));backdrop-filter: blur(4px);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(15,23,42,0.03)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0369a1);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav ul{display:flex;gap:12px;align-items:center;list-style:none;margin:0;padding:0}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    h1{font-size:28px;margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;font-weight:600}
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{background:linear-gradient(180deg,rgba(2,6,23,0.02),transparent);padding:10px;border-radius:10px;text-align:center;min-width:84px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .people-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .person{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:10px;background:#eef2f7;flex-shrink:0;display:inline-block;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .muted{color:var(--muted);font-size:14px}
+    main{padding:28px 0}
+    section{margin:18px 0}
+    .research-item{display:flex;gap:14px;align-items:flex-start}
+    .pubs{display:flex;flex-direction:column;gap:10px}
+    footer{border-top:1px solid rgba(15,23,42,0.03);padding:22px 0;margin-top:28px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .people-list{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header .container{padding:16px}
+      .nav{flex-direction:column;align-items:flex-start;gap:8px}
+      nav ul{flex-wrap:wrap}
+      .grid{grid-template-columns:1fr}
+      .people-list{grid-template-columns:1fr}
+      .avatar{width:54px;height:54px}
+    }
+
+    /* simple modal */
+    .modal-backdrop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.4);z-index:80}
+    .modal{background:var(--card);width:min(880px,92%);border-radius:14px;padding:20px}
+    .modal.show{display:block}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">C</div>
+        <div>
+          <div style="font-weight:700">Cultural Psychology Lab</div>
+          <div class="muted" style="font-size:13px">Studying culture, mind, and behaviour</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#opportunities">Join</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Culture shapes the way we think, feel, and relate.</h1>
+          <p class="lead">Our laboratory operates within the theoretical framework of cultural psychology, aiming to explore the psychological processes and behavioral patterns that are both universal and culturally specific among humans. We seek to answer what psychological and behavioral traits are shared by humans as cultural beings and which are unique to specific cultures, while also investigating the dynamic construction between culture and psychology.</p>
+          <a class="cta" href="#research">Explore our research</a>
+          <div class="stats">
+            <div class="stat"><div style="font-weight:700">7+</div><div class="muted">Projects</div></div>
+            <div class="stat"><div style="font-weight:700">25+</div><div class="muted">Publications</div></div>
+            <div class="stat"><div style="font-weight:700">10</div><div class="muted">Team members</div></div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Latest News</h3>
+          <ul style="padding-left:18px;margin:8px 0 0 0;color:var(--muted);">
+            <li><strong>2025-10-26</strong> — New published: Artificial Intelligence Versus Human Fundraisers: Evidence That Narrative Perspective and Fundraiser Identity Influence Donation Intentions. <a href="#publications">Read</a></li>
+            <li><strong>2025-07-21</strong> — New published: How to capture moral behaviors: From laboratory to everyday life.<a href="#publications">Read</a></li>
+            <li><strong>2025-07-04</strong> — Lab open research assistant recruitment. <a href="#opportunities">Apply</a></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+   <!-- PEOPLE -->
+<section id="people">
+  <div class="card">
+    <h2>People</h2>
+    <p class="muted">Faculty, collaborators, students, and research assistants.</p>
+
+    <!-- PI -->
+    <h3 style="margin-top:20px;font-weight:700">Principal Investigator</h3>
+    <div class="people-list" style="margin-top:10px">
+
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Prof. Xiaomeng Hu"
+           data-role="Principal Investigator"
+           data-bio="Ph.D. in Psychology, Rutgers University; Postdoctoral Researcher, Tsinghua University; Email: xiaomenghu@ruc.edu.cn">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/hxm.jpg" alt="Xiaomeng Hu"></div>
+        <div>
+          <div style="font-weight:600">Prof. Xiaomeng Hu</div>
+          <div class="muted">Principal Investigator</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Collaborators -->
+    <h3 style="margin-top:30px;font-weight:700">Collaborators</h3>
+    <div class="people-list" style="margin-top:10px">
+
+      <!-- Kaiping Peng -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Prof. Kaiping Peng"
+           data-role="Collaborator"
+           data-bio="Department of Psychological and Cognitive Sciences, Tsinghua University. Email: pengkp@tsinghua.edu.cn">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/pkp.jpg" alt="Kaiping Peng"></div>
+        <div>
+          <div style="font-weight:600">Prof. Kaiping Peng</div>
+          <div class="muted">Collaborator</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Students -->
+    <h3 style="margin-top:30px;font-weight:700">Students</h3>
+    <div class="people-list" style="margin-top:10px">
+
+
+      <!-- Huarong Liu -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Huarong Liu"
+           data-role="Master Student"
+           data-bio="Research interest: AI for Prosocial Behavior. Email: 2023101969@ruc.edu.cn">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/lhr.png" alt="Huarong Liu"></div>
+        <div>
+          <div style="font-weight:600">Huarong Liu</div>
+          <div class="muted">Master Student</div>
+        </div>
+      </div>
+
+      <!-- Qilong Li -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Qilong Li"
+           data-role="Master Student"
+           data-bio="Research interest: Moral psychology. Email: liqilong20@ruc.edu.cn">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/lql.png" alt="Qilong Li"></div>
+        <div>
+          <div style="font-weight:600">Qilong Li</div>
+          <div class="muted">Master Student</div>
+        </div>
+      </div>
+
+      <!-- Yumeng Sun -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Yumeng Sun"
+           data-role="Master Student"
+           data-bio="Research interest: AI for moral psychology and well-being. Email: 2025103903@ruc.edu.cn">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/sym.png" alt="Yumeng Sun"></div>
+        <div>
+          <div style="font-weight:600">Yumeng Sun</div>
+          <div class="muted">Master Student</div>
+        </div>
+      </div>
+      
+<!-- Ziyan Wang -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Ziyan Wang"
+           data-role="Master Student"
+           data-bio="Research interest: East Asian Culture & Mental Health. Email: 627389063@qq.com">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/wzy.png" alt="Ziyan Wang"></div>
+        <div>
+          <div style="font-weight:600">Ziyan Wang</div>
+          <div class="muted">Master Student</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Assistants -->
+    <h3 style="margin-top:30px;font-weight:700">Research Assistants</h3>
+    <div class="people-list" style="margin-top:10px">
+
+      <!-- Yuchao Xie -->
+      <div class="person card" tabindex="0" role="button" onclick="openPerson(event)"
+           data-name="Yuchao Xie"
+           data-role="Research Assistant"
+           data-bio="Research interest: AI-based decision. Email: yuchao.xie@uqconnect.edu.au">
+        <div class="avatar"><img src="https://raw.githubusercontent.com/FlyingDvD-wzy/culturalpsychologylab.github.io/index/xyc.jpg" alt="Yuchao Xie"></div>
+        <div>
+          <div style="font-weight:600">Yuchao Xie</div>
+          <div class="muted">Research Assistant</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- RESEARCH -->
+    <section id="research">
+    <h2>Research</h2>
+    <p>Cultural psychology holds both theoretical and applied value. Theoretically, future research will uncover the biological, psychological, and social mechanisms through which culture constructs psychology. In application, it will expand the translation of cultural psychology findings in political, business, and academic spheres. For example, in politics, this includes cultural confidence, cultural soft power, and building a community with a shared future for humanity; in business, it involves cross-cultural management, localization of global brands, and organizational culture; in academia, it encompasses interdisciplinary integration and collaboration.</p>
+
+    <h3>Specific Research Questions</h3>
+    <ul>
+        <li>How does culture shape thinking? (Behavioral and neural mechanisms of dialectical vs. analytical thinking)</li>
+        <li>How does culture shape morality? (Cultural differences and temporal-spatial changes in morality)</li>
+        <li>How does culture shape well-being? (Theories of well-being among Chinese people)</li>
+        <li>How does culture influence the psychology of artificial intelligence? (Cultural differences in AI ethics)</li>
+        <li>International and domestic students (mental health, cultural adaptation, and well-being)</li>
+    </ul>
+</section>
+
+    <!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="card">
+    <h2>Publications</h2>
+    <p class="muted">Selected peer-reviewed papers and preprints. For a full list, see our <a href="#">Google Scholar</a>.</p>
+
+    <div class="pubs" style="margin-top:12px">
+      <!-- New publications inserted -->
+      <h3 style="margin-top:20px;font-weight:700">International Journal Articles</h3>
+
+      <div class="card">
+        <div style="font-weight:700">Liu, H., Li, Q., Sun, Y., Chen, M., An, Y., Talhelm, T., & Hu, X. (2025). Artificial Intelligence Versus Human Fundraisers: Evidence That Narrative Perspective and Fundraiser Identity Influence Donation Intentions.  <span class="muted">Cyberpsychology, Behavior, and Social Networking, 28(10), 698-706.</span></div>
+      </div>
+
+       <div class="card">
+        <div style="font-weight:700">Sun, Y., Teng, Y., Zhao, S., Liu, H., Li, Q., Qin, Q., & Hu, X. (2025). How to capture moral behaviors: From laboratory to everyday life. <span class="muted">Well-Being Sciences Review, 1(2), 86-96. </span></div>
+      </div>
+      
+      <div class="card">
+        <div style="font-weight:700">Hu, X., & Yan, C. G. (2024). Current status and future challenges in brain imaging: Insights from leading experts. <span class="muted">Medicine Plus, 100049.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Teng, Y., Li, H. X., Chen, S. X., Castellanos, F. X., Yan, C. G., & Hu, X*. (2024). Mapping the Neural Mechanism that Distinguishes between Holistic Thinking and Analytic Thinking. <span class="muted">NeuroImage, 120627.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Li, H. X., & Hu, X*. (2022). Dialectical Thinking Is Linked With Smaller Left Nucleus Accumbens and Right Amygdala. <span class="muted">Frontiers in Psychology, 13, 760489.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Hu, X.*, Wang, Y., Liao, S., & Peng, K. (2021). Do experiences studying abroad promote dialectical thinking? Empirical evidence from Chinese international students. <span class="muted">Frontiers in Psychology, 1966.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Yu, F., Peng, K., & Hu, X*. (2020). Knowledge is money: Do people think cultural capital can be transformed into economic value? <span class="muted">Psych Journal.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Hu, X., Zhu, Y., Yu, F., Wilder, D. A., Zhang, L., Chen, S. X., & Peng, K*. (2020). A cross-cultural examination on global orientations and moral foundations. <span class="muted">Psych Journal, 9:108–117.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Hu, X., Chen, S., Zhang, L., Yu, F., Peng, K*, & Liu, L.* (2018). Do Chinese Traditional and Modern Cultures Affect Young Adults’ Moral Priorities? <span class="muted">Frontiers in Psychology, 9:1799.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Zhou, X., Yang, Q., & Hu, X*. (2018). When money meets morality: Human universals and cultural differences. <span class="muted">PsyCh Journal, 7:105–106.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Hu, X.*, Kim, A., Siwek, N., & Wilder, D. (2017). The Facebook paradox: effects of Facebooking on individuals’ social relationships and psychological well-being. <span class="muted">Frontiers in Psychology, 8:87.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Hu, X.*, & Chen, Y. (2010). Psychology and Micro-blogging: Self-Presentation, Social Interaction and Social Culture. <span class="muted">Proceedings of 2nd IEEE Symposium on Web Society, 71–76.</span></div>
+      </div>
+
+      <h3 style="margin-top:20px;font-weight:700">Chinese Journal Articles (First or Corresponding Author)</h3>
+
+      <div class="card"><div style="font-weight:700">赵偲琪, 刘若婷, & 胡晓檬. (2024). 全人类认同提升亲社会心理和行为及其解释机制. <span class="muted">心理科学进展, 32(10), 1697.</span></div></div>
+      <div class="card"><div style="font-weight:700">滕玥, 张昊天, 赵偲琪, 彭凯平*, 胡晓檬*. (2024). 多元文化经历提升人类对机器人的利他行心智知觉的中介作用. <span class="muted">心理学报, 56(2), 146-160.</span></div></div>
+      <div class="card"><div style="font-weight:700">王扬, 滕玥, 彭凯平, & 胡晓檬*. (2022). 新冠疫情期间海外中国留学生心理健康的影响因素及其干预策略. <span class="muted">应用心理学, 28(2), 134-146.</span></div></div>
+      <div class="card"><div style="font-weight:700">胡晓檬*, 彭凯平, & 陈晓华. (2021). 全球化悖论的文化心理学解读. <span class="muted">应用心理学, 28(3), 245-254.</span></div></div>
+      <div class="card"><div style="font-weight:700">郭永玉，胡晓檬*. (2021). 求真理 去服务 得自由. <span class="muted">心理学探新, (2), 186-192.</span></div></div>
+      <div class="card"><div style="font-weight:700">廖思华，丁凤仪，徐迩嘉，胡平，胡晓檬*. (2021). 从“留学热”到“海归潮”： 海归群体反向文化震荡的心理与行为效应. <span class="muted">应用心理学, 27(3), 204-214.</span></div></div>
+      <div class="card"><div style="font-weight:700">胡晓檬, 韩雨芳, 喻丰, & 彭凯平. (2020). 多元文化经历的双刃剑效应: 心理后果与边界条件. <span class="muted">应用心理学, 27(1), 1-9.</span></div></div>
+      <div class="card"><div style="font-weight:700">喻丰, 许丽颖, 韩婷婷, 刘知远, 钱小军, 彭凯平, & 胡晓檬*. (2020). 道德节律：基于新浪微博的道德动机每分变化. <span class="muted">科学通报.</span></div></div>
+      <div class="card"><div style="font-weight:700">胡晓檬, 喻丰, 彭凯平*. (2018). 文化如何影响道德?文化间变异、文化内变异与多元文化的视角. <span class="muted">心理科学进展, 26(11), 2081-2090.</span></div></div>
+
+      <h3 style="margin-top:20px;font-weight:700">Books and Translations</h3>
+      <ol>
+        <li>潇檬 主编. (2022). 《心理学如何影响世界》. 清华大学出版社</li>
+        <li>潇檬 著. (2024). 《文化心理学与生活》. 清华大学出版社</li>
+        <li>潇檬 译. (2024). 《社会心理学与人类本性》. 中国人民大学出版社</li>
+        <li>潇檬 等 译. (2024). 《思考：回忆录》. 中国人民大学出版社</li>
+        <li>潇檬 主编. (2024). 《和心理学大咖聊聊天》. 北京颉滕文化传媒公司</li>
+      </ol>
+
+    </div>
+  </div>
+</section>
+
+    <!-- OPPORTUNITIES -->
+    <section id="opportunities">
+      <div class="card">
+        <h2>Opportunities</h2>
+        <p class="muted">We recruit motivated research assistants. </p>
+        <h4 style="margin-top:10px">How to apply</h4>
+        <ol class="muted">
+          <li>Email a CV and a brief research statement to <strong>xiaomenghu@ruc.edu.cn</strong>.</li>
+          <li>If shortlisted, we'll ask for a short writing sample and a short interview.</li>
+          <li>Positions often start at the beginning of each semester (check announcements).</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+      <div class="muted">© <span id="year"></span> Cultural Psychology Lab — Renmin University of China. All rights reserved.</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- person modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal card">
+      <button onclick="closePerson()" style="float:right;background:transparent;border:none;font-size:18px">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openPerson(e){
+      const el = e.currentTarget || e.target.closest('.person');
+      if(!el) return;
+      const name = el.dataset.name || '';
+      const role = el.dataset.role || '';
+      const bio = el.dataset.bio || '';
+      const content = `<h3>${name}</h3><div class="muted">${role}</div><p style="margin-top:12px" class="muted">${bio}</p>`;
+      document.getElementById('modal-content').innerHTML = content;
+      const modal = document.getElementById('modal');
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closePerson(){
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    // keyboard close
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePerson(); });
+
+    // smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (ev)=>{
+        const href = a.getAttribute('href');
+        if(href === '#') return;
+        const target = document.querySelector(href);
+        if(target){ ev.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
