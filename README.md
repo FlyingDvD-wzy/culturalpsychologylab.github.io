@@ -1,1 +1,0 @@
-# culturalpsychologylab.github.io
